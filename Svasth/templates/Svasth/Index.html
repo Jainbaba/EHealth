@@ -1,0 +1,231 @@
+{% load static %}
+    <meta charset="UTF-8">
+    <title>Svasth</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300, 400, 700" rel="stylesheet"/>
+
+    <link rel="stylesheet" href="{% static 'Svasth/css/bootstrap.css' %}"/>
+    <link rel="stylesheet" href="{% static 'Svasth/css/animate.css' %}"/>
+    <link rel="stylesheet" href="{% static 'Svasth/css/owl.carousel.min.css' %}"/>
+    <link rel="stylesheet" href="{% static 'Svasth/css/bootstrap-datepicker.css' %}"/>
+    <link rel="stylesheet" href="{% static 'Svasth/css/jquery.timepicker.css' %}"/>
+
+    <link rel="stylesheet" href="{% static 'Svasth/fonts/ionicons/css/ionicons.min.css' %}"/>
+    <link rel="stylesheet" href="{% static 'Svasth/fonts/fontawesome/css/font-awesome.min.css' %}"/>
+    <link rel="stylesheet" href="{% static 'Svasth/fonts/flaticon/font/flaticon.css' %}"/>
+
+
+    <!-- Theme Style -->
+    <link rel="stylesheet" href="{% static 'Svasth/css/style.css' %}">
+
+
+<header role="banner">
+	  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+         <div class="container">
+          <a class="navbar-brand" href="#">Svasth<span>+</span>  </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarsExample05">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link active" href="{% url 'Svasth:Index' %}">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link"  href="{% url 'Svasth:Contact' %}">Contact</a>
+              </li>
+			  <li algin="right" class="nav-item">
+			  <a class="nav-link" href="{% url 'Svasth:LogIn' %}">Login</a>
+			  </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+</header>
+
+	<section class="home-slider owl-carousel">
+      <div class="slider-item" style="background-image: url('{% static 'Svasth/img/surgery.jpg' %}');">
+      </div>
+
+      <div class="slider-item" style="background-image: url('{% static 'Svasth/img/antibiotics.jpg' %}');">
+      </div>
+
+	</section>
+
+
+  <section class="section bg-light custom-tabs">
+      <div class="container">
+        <div class="row justify-content-center mb-5 element-animate">
+          <div class="col-md-8 text-center mb-5">
+            <h2 class="text-uppercase heading border-bottom mb-4">Make your healthcare digital.</h2>
+            <p class="mb-0 lead">Discover the freedom of the digital, location-independent and fastest way to treat your disease
+and give you the best overview of your treatment and disease progression.</p>
+          </div>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-4 border-right element-animate" data-animate-effect="fadeInLeft">
+            <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+              <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true"><span>01</span> Location-independent medical consultation</a>
+              <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false"><span>02</span> Digitized findings in one place</a>
+              <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false"><span>03</span> Latest findings and events around your problem in your environment</a>
+              <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false"><span>04</span> Online appointment selection</a>
+                <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false"><span>05</span> Find suitable doctors in your area</a>
+
+            </div>
+          </div>
+          <div class="col-md-1"></div>
+          <div class="col-md-7 element-animate" data-animate-effect="fadeInLeft">
+
+            <div class="tab-content" id="v-pills-tabContent">
+              <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                <span class="icon flaticon-hospital"></span>
+                <h2 class="text-primary">Location-independent medical consultation</h2>
+
+                <p><a href="#" class="btn btn-primary">Learn More</a></p>
+              </div>
+              <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                <span class="icon flaticon-first-aid-kit"></span>
+                <h2 class="text-primary">Digitized findings in one place</h2>
+
+                <p><a href="#" class="btn btn-primary">Learn More</a></p>
+              </div>
+              <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+                <span class="icon flaticon-hospital-bed"></span>
+                <h2 class="text-primary">Latest News and events around your environment</h2>
+
+                <p><a href="#" class="btn btn-primary">Learn More</a></p>
+              </div>
+              <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+                <span class="icon flaticon-doctor"></span>
+                <h2 class="text-primary">Online appointment selection</h2>
+
+                <p><a href="#" class="btn btn-primary">Learn More</a></p>
+              </div>
+                <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+                <span class="icon flaticon-doctor"></span>
+                <h2 class="text-primary">Find suitable doctors in your area</h2>
+
+                <p><a href="#" class="btn btn-primary">Learn More</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+    </section>
+
+
+    <section class="cover_1" style="background-image: url({% static 'Svasth/img/bg_1.jpg' %});">
+      <div class="container">
+        <div class="row text-center justify-content-center">
+          <div class="col-md-10">
+            <h2 class="heading element-animate">Experience Our Advance Facilities</h2>
+            <p class="sub-heading element-animate mb-5">Reports, news and doctor's consultations - all healthcare in one place.</p>
+            <p class="element-animate"><a href="{% url 'Svasth:LogIn' %}" class="btn btn-primary btn-lg">Log In</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section bg-light">
+      <div class="container">
+        <div class="row justify-content-center mb-5 element-animate">
+          <div class="col-md-8 text-center mb-5">
+            <h2 class="text-uppercase heading border-bottom mb-4">News &amp; Events</h2>
+            <p class="mb-0 lead">All events & news about health in your area.</p>
+          </div>
+        </div>
+       </div>
+
+      <div class="container">
+        <div class="row">
+{% for Events in All_Event %}
+    <div class="col-md-4 element-animate">
+            <div class="media d-block media-custom text-left">
+              <img src="{{ Events.Event_img.url }}" alt="Image Placeholder" class="img-fluid">
+              <div class="media-body">
+                <span class="meta-post">{{ Events.Event_Date }}</span>
+                <h3 class="mt-0 text-black"><a href="{{ Events.Event_link }}" class="text-black">{{ Events.Event_Name }}</a></h3>
+                <p>{{ Events.Event_Desc }}</p>
+                <p class="clearfix">
+                    <a href="{{ Events.Event_link }}" class="float-left">Read more</a>
+                </p>
+              </div>
+            </div>
+          </div>
+{% endfor %}
+        </div>
+      </div>
+    </section>
+
+
+
+
+<footer class="site-footer" role="contentinfo">
+      <div class="container">
+        <div class="row mb-5 element-animate">
+          <div class="col-md-3 mb-5">
+            <h3>Services</h3>
+            <ul class="footer-link list-unstyled">
+              <li><a href="{% url 'Svasth:LogIn'  %}">Find a doctor</a></li>
+
+              <li><a href="#">Online Services</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3 mb-5">
+            <h3>Latest News</h3>
+            <ul class="footer-link list-unstyled">
+              <li><a href="#">News &amp; Events</a></li>
+
+            </ul>
+          </div>
+          <div class="col-md-3 mb-5">
+            <h3>About</h3>
+            <ul class="footer-link list-unstyled">
+
+              <li><a href="#">Feedback</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3 mb-5">
+            <h3>Location &amp; Contact</h3>
+            <p class="mb-5">CHRIST(Deemed to be University)</p>
+
+            <h4 class="text-uppercase mb-3 h6 text-white">Email</h4>
+            <p class="mb-5"><a href="mailto:info@yourdomain.com">info@svasth.com</a></p>
+
+            <h4 class="text-uppercase mb-3 h6 text-white">Phone</h4>
+            <p>+91 64 435 3533</p>
+
+          </div>
+        </div>
+
+        <div class="row pt-md-3 element-animate">
+          <div class="col-md-12">
+            <hr class="border-t">
+          </div>
+
+          <div class="col-md-6 col-sm-12 text-md-right text-sm-left">
+            <a href="#" class="p-2"><span class="fa fa-facebook"></span></a>
+            <a href="#" class="p-2"><span class="fa fa-twitter"></span></a>
+            <a href="#" class="p-2"><span class="fa fa-instagram"></span></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+
+    <script src="{%  static 'Svasth/js/jquery-3.2.1.min.js' %}"></script>
+    <script src="{%  static 'Svasth/js/popper.min.js' %}"></script>
+    <script src="{%  static 'Svasth/js/bootstrap.min.js' %}"></script>
+    <script src="{%  static 'Svasth/js/owl.carousel.min.js' %}"></script>
+    <script src="{%  static 'Svasth/js/bootstrap-datepicker.js' %}"></script>
+    <script src="{%  static 'Svasth/js/jquery.timepicker.min.js' %}"></script>
+    <script src="{%  static 'Svasth/js/jquery.waypoints.min.js' %}"></script>
+    <script src="{%  static 'Svasth/js/main.js' %}"></script>

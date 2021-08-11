@@ -1,0 +1,160 @@
+{% load static %}
+    <meta charset="UTF-8">
+    <title>Svasth</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300, 400, 700" rel="stylesheet"/>
+
+    <link rel="stylesheet" href="{% static 'Svasth/css/bootstrap.css' %}"/>
+    <link rel="stylesheet" href="{% static 'Svasth/css/animate.css' %}"/>
+    <link rel="stylesheet" href="{% static 'Svasth/css/owl.carousel.min.css' %}"/>
+    <link rel="stylesheet" href="{% static 'Svasth/css/bootstrap-datepicker.css' %}"/>
+    <link rel="stylesheet" href="{% static 'Svasth/css/jquery.timepicker.css' %}"/>
+
+    <link rel="stylesheet" href="{% static 'Svasth/fonts/ionicons/css/ionicons.min.css' %}"/>
+    <link rel="stylesheet" href="{% static 'Svasth/fonts/fontawesome/css/font-awesome.min.css' %}"/>
+    <link rel="stylesheet" href="{% static 'Svasth/fonts/flaticon/font/flaticon.css' %}"/>
+
+
+    <!-- Theme Style -->
+    <link rel="stylesheet" href="{% static 'Svasth/css/style.css' %}">
+
+<header role="banner">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+         <div class="container">
+          <a class="navbar-brand" href="index.html">Svasth<span>+</span>  </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarsExample05">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'Svasth:Home' UserID %}">News & Events</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href={% url 'Svasth:MyDoctors'  UserID %}>My Doctors</a>
+              </li>
+                <li class = 'nav-item'>
+                    <a class="nav-link" href="{% url 'Svasth:Hospitals' UserID %}">Hospitals</a>
+                </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="{% url 'Svasth:Reports' UserID %}">My Reports</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'Svasth:Appointments' UserID %}">Appointments</a>
+              </li>
+              <li class="nav-item">
+              <a class="nav-link" href="{% url 'Svasth:Index' %}">Log Out</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+
+ <section class="home-slider inner-page owl-carousel">
+      <div class="slider-item" style="background-image: url('{% static 'Svasth/img/antibiotics.jpg' %}');">
+
+        <div class="container">
+          <div class="row slider-text align-items-center">
+            <div class="col-md-7 col-sm-12 element-animate">
+              <h1>My Reports</h1>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+<br><br>
+
+ <section class="section bg-light">
+      <div class="container">
+        <div class="row">
+{% for reports in All_Reports %}
+             <div class="col-md-4 element-animate">
+          <div class="media d-block media-custom text-center">
+              <div class="media-body">
+                <span class="meta-post">{{ reports.Report_Date }}</span>
+                  <h3 class="mt-0 text-black">{{ reports.Report_Name }}</h3>
+                  <p>{{ reports.Report_Desc }} <br> Dr.{{ reports.Report_Doc.Doctors_Name }} <br> {{ reports.Report_Doc.Doctors_Specialisation }}</p>
+                  <p class="clearfix">
+                  <a href="{{ reports.Report_file.url }}" class="float-left" target="_blank">View</a>
+                  <a href="{{ reports.Report_file.url }}" class="float-right" download>Download</a>
+                </p>
+              </div>
+            </div>
+              </div>
+ {% endfor %}
+        </div>
+      </div>
+ </section>s
+
+<footer class="site-footer" role="contentinfo">
+      <div class="container">
+        <div class="row mb-5 element-animate">
+          <div class="col-md-3 mb-5">
+            <h3>Services</h3>
+            <ul class="footer-link list-unstyled">
+              <li><a href="{% url 'Svasth:Hospitals' UserID %}">Find a doctor</a></li>
+
+              <li><a href="#">Online Services</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3 mb-5">
+            <h3>Latest News</h3>
+            <ul class="footer-link list-unstyled">
+              <li><a href="#">News &amp; Events</a></li>
+
+            </ul>
+          </div>
+          <div class="col-md-3 mb-5">
+            <h3>About</h3>
+            <ul class="footer-link list-unstyled">
+
+              <li><a href="#">Feedback</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3 mb-5">
+            <h3>Location &amp; Contact</h3>
+            <p class="mb-5">CHRIST(Deemed to be University)</p>
+
+            <h4 class="text-uppercase mb-3 h6 text-white">Email</h4>
+            <p class="mb-5"><a href="mailto:info@yourdomain.com">info@svasth.com</a></p>
+
+            <h4 class="text-uppercase mb-3 h6 text-white">Phone</h4>
+            <p>+91 64 435 3533</p>
+
+          </div>
+        </div>
+
+        <div class="row pt-md-3 element-animate">
+          <div class="col-md-12">
+            <hr class="border-t">
+          </div>
+
+          <div class="col-md-6 col-sm-12 text-md-right text-sm-left">
+            <a href="#" class="p-2"><span class="fa fa-facebook"></span></a>
+            <a href="#" class="p-2"><span class="fa fa-twitter"></span></a>
+            <a href="#" class="p-2"><span class="fa fa-instagram"></span></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- END footer -->
+    <script src="{%  static 'Svasth/js/jquery-3.2.1.min.js' %}"></script>
+    <script src="{%  static 'Svasth/js/popper.min.js' %}"></script>
+    <script src="{%  static 'Svasth/js/bootstrap.min.js' %}"></script>
+    <script src="{%  static 'Svasth/js/owl.carousel.min.js' %}"></script>
+    <script src="{%  static 'Svasth/js/bootstrap-datepicker.js' %}"></script>
+    <script src="{%  static 'Svasth/js/jquery.timepicker.min.js' %}"></script>
+    <script src="{%  static 'Svasth/js/jquery.waypoints.min.js' %}"></script>
+    <script src="{%  static 'Svasth/js/main.js' %}"></script>
+
+
+
+
+
+
